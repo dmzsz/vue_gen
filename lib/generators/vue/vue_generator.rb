@@ -28,19 +28,19 @@ class VueGenerator < Rails::Generators::NamedBase
   end
 
   def create_vuex_modules
-    template "modules.js.erb", "app/frontend/packs/vuex/modules/#{plural_name}/#{plural_name}.js"
+    template "modules.js.erb", "app/frontend/vuex/modules/#{plural_name}/#{plural_name}.js"
   end
 
   # def create_apis
-  #   template "api.js.erb", "app/frontend/packs/vuex/api/#{plural_name}/#{plural_name}.js"
+  #   template "api.js.erb", "app/frontend/vuex/api/#{plural_name}/#{plural_name}.js"
   # end
 
   def create_router_item
-    output_path = "app/frontend/packs/router/index.js"
+    output_path = "app/frontend/router/index.js"
     root_js_file = "#{Rails.root.to_s}/#{output_path}"
     file = File.open(root_js_file, "rb")
     contents = file.read
-    
+
     if contents.include?("#{router_path_index}")
         warn "\e[31mWarning: route path [ #{router_path_index} ] exists!! skip update router/index.js\e[0m"
     else
@@ -49,11 +49,11 @@ class VueGenerator < Rails::Generators::NamedBase
   end
 
   def create_menu_item
-    output_path = "app/frontend/packs/lib/slideMenuItems_dev.js"
+    output_path = "app/frontend/lib/slideMenuItems_dev.js"
     menu_js_file = "#{Rails.root.to_s}/#{output_path}"
     file = File.open(menu_js_file, "rb")
     contents = file.read
-    
+
     if contents.include?(router_index_name)
         warn "\e[31mWarning: menu item [ #{router_index_name} ] exists!! skip update lib/slideMenuItems_dev.js\e[0m"
     else
@@ -84,7 +84,7 @@ class VueGenerator < Rails::Generators::NamedBase
   end
 
   def vue_component_kebab_name
-    [human_name.parameterize, "view"].join("-") 
+    [human_name.parameterize, "view"].join("-")
   end
 
   def vue_component_snippet
@@ -163,7 +163,7 @@ class VueGenerator < Rails::Generators::NamedBase
   def update_singular_name
     "UPDATE_#{singular_underscore.upcase}"
   end
-  
+
   def delete_singular_name
     "DELETE_#{singular_underscore.upcase}"
   end
@@ -211,7 +211,7 @@ class VueGenerator < Rails::Generators::NamedBase
             //<%=import_router_component%>
             EOF
   end
-  
+
   def router_index_name
     "#{name}Index"
   end

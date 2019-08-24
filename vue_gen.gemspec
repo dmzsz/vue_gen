@@ -6,12 +6,12 @@ require "vue_gen/version"
 Gem::Specification.new do |spec|
   spec.name          = "vue_gen"
   spec.version       = VueGen::VERSION
-  spec.authors       = ["ou.yun"]
-  spec.email         = ["ou.yun@tci-cn.co.jp"]
+  spec.authors       = ["dmzsz"]
+  spec.email         = ["dmzsz@sina.com"]
 
   spec.summary       = %q{Write a short summary, because RubyGems requires one.}
   spec.description   = %q{Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/ouin-tci"
+  spec.homepage      = "https://github.com/dmzsz"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "Put your gem's public repo URL here."
-    spec.metadata["changelog_uri"] = "Put your gem's CHANGELOG.md URL here."
+    spec.metadata["source_code_uri"] = "https://github.com/dmzsz/vue_gen"
+    spec.metadata["changelog_uri"] = "#{spec.homepage}/vue_gen/master/CHANGELOG.md"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
